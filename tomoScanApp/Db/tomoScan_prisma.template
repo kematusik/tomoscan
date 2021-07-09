@@ -34,16 +34,6 @@ record(stringout, "$(P)$(R)Filters")
 # Beam status information
 #########################
 
-record(stringout, "$(P)$(R)BeamReadyPVName")
-{
-   field(VAL,  "$(BEAM_READY)")
-}
-
-record(stringout, "$(P)$(R)BeamReadyValue")
-{
-   field(VAL,  "$(READY_VALUE)")
-}
-
 record(bo, "$(P)$(R)Testing")
 {
    field(ZNAM, "No")
@@ -54,10 +44,6 @@ record(bo, "$(P)$(R)Testing")
 # Shutter status
 ################
 
-record(stringout, "$(P)$(R)ShutterStatusPVName")
-{
-   field(VAL,  "$(SHUTTER_STATUS)")
-}
 
 ####################
 # Optics information
@@ -202,35 +188,3 @@ record(bo, "$(P)$(R)CopyToAnalysisDir")
    field(ONAM, "Yes")
 }
 
-######################
-# Fast shutter control
-######################
-
-record(stringout, "$(P)$(R)CloseFastShutterPVName")
-{
-   field(VAL,  "$(CLOSE_FAST_SHUTTER)")
-}
-
-record(stringout, "$(P)$(R)CloseFastShutterValue")
-{
-   field(VAL,  "$(CLOSE_FAST_VALUE)")
-}
-
-record(stringout, "$(P)$(R)OpenFastShutterPVName")
-{
-   field(VAL,  "$(OPEN_FAST_SHUTTER)")
-}
-
-record(stringout, "$(P)$(R)OpenFastShutterValue")
-{
-   field(VAL,  "$(OPEN_FAST_VALUE)")
-}
-
-#########################
-# Camera External Trigger
-#########################
-
-record(stringout, "$(P)$(R)ExternalTriggerSource")
-{
-    field(VAL, "$(LINE)")
-}

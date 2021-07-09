@@ -13,7 +13,7 @@ from tomoscan import TomoScan
 from tomoscan import log
 from epics import devices
 
-class TomoScanPrisma(TomoScan):
+class TomoScanPrisma(TomoScanSTEP):
     """Derived class used for tomography scanning with EPICS on Prisma systems.
 
     Parameters
@@ -39,13 +39,6 @@ class TomoScanPrisma(TomoScan):
         Should not include flats and darks.
         """
         super().begin_scan()
-        self.scan1.reset()
-        prefix = self.pv_prefixes['FilePlugin']
-        self.scan1.BSPV = prefix+'Capture'
-        self.scan1.ASPV = prefix+'Capture'
-        self.scan1.PDLY = self.config_pvs['ScanPosSettlingTime'].get()
-        self.scan1.DDLY = self.config_pvs['ScanDetSettlingTime'].get()
-
 
     def end_scan(self):
         """
