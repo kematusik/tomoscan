@@ -1,0 +1,13 @@
+file "$(TOP)/db/tomoScan.template"
+{
+pattern
+{  P,      R,      CAMERA,    FILE_PLUGIN,   ROTATION,  SAMPLE_X,  SAMPLE_Y,      CLOSE_SHUTTER,        CLOSE_VALUE,        OPEN_SHUTTER,         OPEN_VALUE}
+{pxm1:, TomoScan:, ANDOR1:,   ANDOR1:HDF1:,  pxm1:m1,   DMC01:D,   DMC01:E,        mk4:KvOn,                0,                  mk4:KvOn,      1}
+}
+
+file "$(TOP)/db/tomoScan_prisma.template"
+{
+pattern
+{  P,      R,         BEAM_READY,                  READY_VALUE,CLOSE_FAST_SHUTTER, CLOSE_FAST_VALUE, OPEN_FAST_SHUTTER, OPEN_FAST_VALUE, LINE, SHUTTER_STATUS}
+{pxm1:, TomoScan:, PA:07BM:STA_A_BEAMREADY_PL.VAL,    1,         7bmb1:m27,             0.2,          7bmb1:m27,            0,       Line0, PB:07BM:STA_A_FES_CLSD_PL.VAL}
+}
