@@ -74,3 +74,11 @@ class TomoScanPrisma(TomoScan):
         Collect projections.
         """
         log.info("Collect projections")
+
+    def collect_post_scan(self):
+        """
+        Collect post scan at same settings as tomography but with a larger step size.
+        """
+        #self.rotation_step_post = 
+        log.info("Collect post scan")
+
