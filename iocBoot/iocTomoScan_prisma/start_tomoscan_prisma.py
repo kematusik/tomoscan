@@ -3,5 +3,6 @@
 #     python -i start_tomoscan_prisma.py
 # The -i is needed to keep Python running, otherwise it will create the object and exit
 from tomoscan.tomoscan_prisma import TomoScanPrisma
-ts = TomoScanPrisma(["../../tomoScanApp/Db/tomoScan_settings.req"],
+ts = TomoScanPrisma(["../../tomoScanApp/Db/tomoScan_settings.req",
+                     "../../tomoScanApp/Db/tomoScan_prisma_settings.req"],
                  {"$(P)":"pxm1:", "$(R)":"TomoScan:"})

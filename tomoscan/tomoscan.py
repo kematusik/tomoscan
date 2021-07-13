@@ -931,3 +931,24 @@ class TomoScan():
             if timeout > 0:
                 if elapsed_time >= timeout:
                     raise CameraTimeoutError()
+
+    def set_trigger_mode(self, trigger_mode, num_images):
+        """Sets the trigger mode on the camera.
+
+        Parameters
+        ----------
+        trigger_mode : str
+            Choices for Andor are: "Internal", "External", "External Start", "External Exposure", "External FVP",  or "Software"
+            We typically use "Internal". 
+
+        num_images : int
+            Number of images to collect.  Ignored if trigger_mode="FreeRun".
+            This is used to set the ``NumImages`` PV of the camera.
+        """
+        self.epics_pvs['CamAcquire'].put('Done') # stop acquisition
+        self.wait_pv(self.epics_pvs['CamAcquire'], 0) # wait for callback
+        self.epics_pvs['CamImageMode'].put('Single', wait=True) # put camera into "Single mode" 
+        log.info('set trigger mode: %s', trigger_mode) 
+        self.epics_pvs['CamTriggerMode'].put(trigger_mode, wait=True) # set trigger mode
+        self.wait_pv(self.epics_pvs['CamTriggerMode'], 0) 
+        self.epics_pvs['CamNumImages'].put(num_images, wait=True) # set number of images to take
