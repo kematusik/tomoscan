@@ -57,18 +57,44 @@ class TomoScanPrisma(TomoScanSTEP):
         self.scan_is_running = False
 
         #super().end_scan()
+        
+    def collect_static_frames(self, num_frames):
+        """Collects num_frames images in "Internal" trigger mode for dark fields and flat fields.
+        Overwriting this function from TomoScanSTEP class because detectors do not have 
+        requisite information to calculate frame time.
 
+        Parameters
+        ----------
+        num_frames : int
+            Number of frames to collect.
+        """
+        # This is called when collecting dark fields or flat fields
+        #super().collect_static_frames(self.num_frames)
+        log.info('collecting static frames: %d', num_frames)
+        self.set_trigger_mode('Internal', num_frames)
+        self.control_pvs['CamImageMode'].put('Multiple') # set image mode to multiple
+        self.epics_pvs['CamAcquire'].put('Acquire') 
+        self.wait_pv(self.epics_pvs['CamAcquire'], 0, 60*5) # wait for acquisition PV to finish
+    
     def collect_dark_fields(self):
         """
         Collect dark fields.
         """
         log.info("Collecting dark fields")
+        self.control_pvs['CamImageMode'].put('Multiple') # set image mode to multiple
+        super().collect_dark_fields()
+    
+    def compute_frame_time(self):
+        super().compute_frame_time()
+
 
     def collect_flat_fields(self):
         """
         Collect flat fields.
         """
         log.info("Collecting flat fields")
+        self.control_pvs['CamImageMode'].put('Multiple') # set image mode to multiple
+        super().collect_flat_fields()
 
     def collect_projections(self):
         """Collects projections.
@@ -85,7 +111,8 @@ class TomoScanPrisma(TomoScanSTEP):
         """
         TomoScan.collect_projections(self)
         self.set_trigger_mode("Internal", self.num_angles) # set the trigger mode
-        
+        self.control_pvs['CamImageMode'].put('Single') # set image mode to multiple
+ 
         start_time = time.time()
         stabilization_time = self.epics_pvs['StabilizationTime'].get() # set the stabilization time
         log.info("stabilization time %f s", stabilization_time)

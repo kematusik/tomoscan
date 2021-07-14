@@ -500,3 +500,492 @@
 2021-07-13 15:14:46,236 - INFO: Saved 10/10
 2021-07-13 15:14:46,236 - INFO: Scan complete
 2021-07-13 15:14:46,240 - DEBUG: pv_callback pvName=pxm1:TomoScan:StartScan, value=0, char_value=Done
+2021-07-13 16:17:05,076 - DEBUG: pv_callback pvName=pxm1:TomoScan:StartScan, value=1, char_value=Acquire
+2021-07-13 16:17:05,077 - INFO: begin scan
+2021-07-13 16:17:05,200 - INFO: open shutter: <PV 'pxm1:TomoScan:OpenShutter', count=1, type=time_double, access=read/write>, value: 1
+2021-07-13 16:17:05,201 - INFO: move_sample_in axis: X
+2021-07-13 16:17:05,234 - INFO: set trigger mode: Internal
+2021-07-13 16:17:05,286 - INFO: stabilization time 0.000000 s
+2021-07-13 16:17:05,287 - INFO: angle 0: 0.000000
+2021-07-13 16:17:08,524 - INFO: Collected 1/10
+2021-07-13 16:17:08,524 - INFO: Saved 0/10
+2021-07-13 16:17:08,525 - INFO: angle 1: 1.000000
+2021-07-13 16:17:11,913 - INFO: Collected 1/10
+2021-07-13 16:17:11,913 - INFO: Saved 1/10
+2021-07-13 16:17:11,914 - INFO: angle 2: 2.000000
+2021-07-13 16:17:15,303 - INFO: Collected 1/10
+2021-07-13 16:17:15,304 - INFO: Saved 2/10
+2021-07-13 16:17:15,304 - INFO: angle 3: 3.000000
+2021-07-13 16:17:18,714 - INFO: Collected 1/10
+2021-07-13 16:17:18,714 - INFO: Saved 3/10
+2021-07-13 16:17:18,715 - INFO: angle 4: 4.000000
+2021-07-13 16:17:22,113 - INFO: Collected 1/10
+2021-07-13 16:17:22,113 - INFO: Saved 4/10
+2021-07-13 16:17:22,114 - INFO: angle 5: 5.000000
+2021-07-13 16:17:25,502 - INFO: Collected 1/10
+2021-07-13 16:17:25,503 - INFO: Saved 5/10
+2021-07-13 16:17:25,503 - INFO: angle 6: 6.000000
+2021-07-13 16:17:28,903 - INFO: Collected 1/10
+2021-07-13 16:17:28,904 - INFO: Saved 6/10
+2021-07-13 16:17:28,904 - INFO: angle 7: 7.000000
+2021-07-13 16:17:32,333 - INFO: Collected 1/10
+2021-07-13 16:17:32,333 - INFO: Saved 7/10
+2021-07-13 16:17:32,334 - INFO: angle 8: 8.000000
+2021-07-13 16:17:35,703 - INFO: Collected 1/10
+2021-07-13 16:17:35,704 - INFO: Saved 8/10
+2021-07-13 16:17:35,704 - INFO: angle 9: 9.000000
+2021-07-13 16:17:39,112 - INFO: Collected 1/10
+2021-07-13 16:17:39,112 - INFO: Saved 9/10
+2021-07-13 16:17:39,613 - INFO: Collected 1/10
+2021-07-13 16:17:39,614 - INFO: Saved 10/10
+2021-07-13 16:17:39,614 - INFO: Scan complete
+2021-07-13 16:17:39,617 - DEBUG: pv_callback pvName=pxm1:TomoScan:StartScan, value=0, char_value=Done
+2021-07-13 16:52:52,223 - DEBUG: pv_callback pvName=pxm1:TomoScan:StartScan, value=1, char_value=Acquire
+2021-07-13 16:52:52,224 - INFO: begin scan
+2021-07-13 16:52:52,374 - INFO: Collecting flat fields
+2021-07-13 16:52:52,400 - INFO: open shutter: <PV 'pxm1:TomoScan:OpenShutter', count=1, type=time_double, access=read/write>, value: 1
+2021-07-13 16:52:52,402 - INFO: move_sample_in axis: X
+2021-07-13 16:52:52,440 - INFO: set trigger mode: Internal
+2021-07-13 16:52:52,493 - INFO: stabilization time 0.000000 s
+2021-07-13 16:52:52,494 - INFO: angle 0: 0.000000
+2021-07-13 16:52:55,714 - INFO: Collected 1/5
+2021-07-13 16:52:55,715 - INFO: Saved 0/15
+2021-07-13 16:52:55,715 - INFO: angle 1: 1.000000
+2021-07-13 16:52:59,132 - INFO: Collected 1/5
+2021-07-13 16:52:59,132 - INFO: Saved 1/15
+2021-07-13 16:52:59,133 - INFO: angle 2: 2.000000
+2021-07-13 16:53:02,503 - INFO: Collected 1/5
+2021-07-13 16:53:02,504 - INFO: Saved 2/15
+2021-07-13 16:53:02,504 - INFO: angle 3: 3.000000
+2021-07-13 16:53:05,912 - INFO: Collected 1/5
+2021-07-13 16:53:05,913 - INFO: Saved 3/15
+2021-07-13 16:53:05,914 - INFO: angle 4: 4.000000
+2021-07-13 16:53:09,303 - INFO: Collected 1/5
+2021-07-13 16:53:09,304 - INFO: Saved 4/15
+2021-07-13 16:53:09,805 - INFO: Collected 1/5
+2021-07-13 16:53:09,805 - INFO: Saved 5/15
+2021-07-13 16:53:09,806 - INFO: Scan complete
+2021-07-13 16:53:09,809 - DEBUG: pv_callback pvName=pxm1:TomoScan:StartScan, value=0, char_value=Done
+2021-07-13 16:54:13,378 - DEBUG: pv_callback pvName=pxm1:TomoScan:StartScan, value=1, char_value=Acquire
+2021-07-13 16:54:13,379 - INFO: begin scan
+2021-07-13 16:54:13,575 - INFO: Collecting flat fields
+2021-07-13 16:54:13,576 - INFO: collect flat fields
+2021-07-13 16:54:13,617 - INFO: open shutter: <PV 'pxm1:TomoScan:OpenShutter', count=1, type=time_double, access=read/write>, value: 1
+2021-07-13 16:54:13,618 - INFO: move_sample_out axis: X
+2021-07-13 16:54:14,568 - INFO: collect static frames: 10
+2021-07-13 16:54:14,605 - INFO: set trigger mode: Internal
+2021-07-13 16:54:15,161 - INFO: Scan complete
+2021-07-13 16:54:15,163 - DEBUG: pv_callback pvName=pxm1:TomoScan:StartScan, value=0, char_value=Done
+2021-07-13 17:08:43,406 - DEBUG: pv_callback pvName=pxm1:TomoScan:StartScan, value=1, char_value=Acquire
+2021-07-13 17:08:43,407 - INFO: begin scan
+2021-07-13 17:08:43,574 - INFO: Collecting flat fields
+2021-07-13 17:08:43,575 - INFO: collect flat fields
+2021-07-13 17:08:43,624 - INFO: open shutter: <PV 'pxm1:TomoScan:OpenShutter', count=1, type=time_double, access=read/write>, value: 1
+2021-07-13 17:08:43,626 - INFO: move_sample_out axis: X
+2021-07-13 17:08:43,629 - INFO: collect static frames: 10
+2021-07-13 17:08:43,663 - INFO: set trigger mode: Internal
+2021-07-13 17:08:46,892 - INFO: open shutter: <PV 'pxm1:TomoScan:OpenShutter', count=1, type=time_double, access=read/write>, value: 1
+2021-07-13 17:08:46,893 - INFO: move_sample_in axis: X
+2021-07-13 17:08:47,873 - INFO: set trigger mode: Internal
+2021-07-13 17:08:47,926 - INFO: stabilization time 0.000000 s
+2021-07-13 17:08:47,927 - INFO: angle 0: 0.000000
+2021-07-13 17:08:51,114 - INFO: Collected 1/5
+2021-07-13 17:08:51,114 - INFO: Saved 1/15
+2021-07-13 17:08:51,115 - INFO: angle 1: 1.000000
+2021-07-13 17:08:54,006 - DEBUG: pv_callback pvName=pxm1:TomoScan:AbortScan, value=1, char_value=Yes
+2021-07-13 17:08:54,114 - DEBUG: pv_callback pvName=pxm1:TomoScan:AbortScan, value=0, char_value=No
+2021-07-13 17:08:54,502 - INFO: Collected 1/5
+2021-07-13 17:08:54,503 - INFO: Saved 2/15
+2021-07-13 17:08:55,005 - INFO: Collected 1/5
+2021-07-13 17:08:55,006 - INFO: Saved 3/15
+2021-07-13 17:08:55,006 - INFO: Scan complete
+2021-07-13 17:08:55,009 - DEBUG: pv_callback pvName=pxm1:TomoScan:StartScan, value=0, char_value=Done
+2021-07-13 17:11:53,780 - DEBUG: pv_callback pvName=pxm1:TomoScan:StartScan, value=1, char_value=Acquire
+2021-07-13 17:11:53,782 - INFO: begin scan
+2021-07-13 17:11:53,974 - INFO: Collecting flat fields
+2021-07-13 17:11:53,976 - INFO: collect flat fields
+2021-07-13 17:11:54,017 - INFO: open shutter: <PV 'pxm1:TomoScan:OpenShutter', count=1, type=time_double, access=read/write>, value: 1
+2021-07-13 17:11:54,019 - INFO: move_sample_out axis: X
+2021-07-13 17:11:54,967 - INFO: collecting static frames: 10
+2021-07-13 17:11:55,008 - INFO: set trigger mode: Internal
+2021-07-13 17:11:58,452 - INFO: open shutter: <PV 'pxm1:TomoScan:OpenShutter', count=1, type=time_double, access=read/write>, value: 1
+2021-07-13 17:11:58,453 - INFO: move_sample_in axis: X
+2021-07-13 17:11:59,432 - INFO: set trigger mode: Internal
+2021-07-13 17:11:59,486 - INFO: stabilization time 0.000000 s
+2021-07-13 17:11:59,487 - INFO: angle 0: 0.000000
+2021-07-13 17:12:02,714 - INFO: Collected 1/5
+2021-07-13 17:12:02,715 - INFO: Saved 1/15
+2021-07-13 17:12:02,715 - INFO: angle 1: 1.000000
+2021-07-13 17:12:06,103 - INFO: Collected 1/5
+2021-07-13 17:12:06,104 - INFO: Saved 2/15
+2021-07-13 17:12:06,105 - INFO: angle 2: 2.000000
+2021-07-13 17:12:09,496 - INFO: Collected 1/5
+2021-07-13 17:12:09,497 - INFO: Saved 3/15
+2021-07-13 17:12:09,497 - INFO: angle 3: 3.000000
+2021-07-13 17:12:12,903 - INFO: Collected 1/5
+2021-07-13 17:12:12,904 - INFO: Saved 4/15
+2021-07-13 17:12:12,904 - INFO: angle 4: 4.000000
+2021-07-13 17:12:13,183 - INFO: Collected 1/5
+2021-07-13 17:12:13,184 - INFO: Saved 5/15
+2021-07-13 17:12:13,684 - INFO: Collected 0/5
+2021-07-13 17:12:13,685 - INFO: Saved 5/15
+2021-07-13 17:12:13,686 - INFO: Scan complete
+2021-07-13 17:12:13,688 - DEBUG: pv_callback pvName=pxm1:TomoScan:StartScan, value=0, char_value=Done
+2021-07-13 17:15:08,265 - DEBUG: pv_callback pvName=pxm1:TomoScan:StartScan, value=1, char_value=Acquire
+2021-07-13 17:15:08,266 - INFO: begin scan
+2021-07-13 17:15:08,375 - INFO: Collecting flat fields
+2021-07-13 17:15:08,399 - INFO: open shutter: <PV 'pxm1:TomoScan:OpenShutter', count=1, type=time_double, access=read/write>, value: 1
+2021-07-13 17:15:08,400 - INFO: move_sample_out axis: X
+2021-07-13 17:15:09,346 - INFO: collecting static frames: 10
+2021-07-13 17:15:09,410 - INFO: set trigger mode: Internal
+2021-07-13 17:15:12,626 - INFO: open shutter: <PV 'pxm1:TomoScan:OpenShutter', count=1, type=time_double, access=read/write>, value: 1
+2021-07-13 17:15:12,627 - INFO: move_sample_in axis: X
+2021-07-13 17:15:13,607 - INFO: set trigger mode: Internal
+2021-07-13 17:15:13,660 - INFO: stabilization time 0.000000 s
+2021-07-13 17:15:13,661 - INFO: angle 0: 0.000000
+2021-07-13 17:15:16,903 - INFO: Collected 1/5
+2021-07-13 17:15:16,903 - INFO: Saved 1/15
+2021-07-13 17:15:16,905 - INFO: angle 1: 1.000000
+2021-07-13 17:15:20,305 - INFO: Collected 1/5
+2021-07-13 17:15:20,305 - INFO: Saved 2/15
+2021-07-13 17:15:20,306 - INFO: angle 2: 2.000000
+2021-07-13 17:15:23,701 - INFO: Collected 1/5
+2021-07-13 17:15:23,701 - INFO: Saved 3/15
+2021-07-13 17:15:23,701 - INFO: angle 3: 3.000000
+2021-07-13 17:15:27,135 - INFO: Collected 1/5
+2021-07-13 17:15:27,135 - INFO: Saved 4/15
+2021-07-13 17:15:27,137 - INFO: angle 4: 4.000000
+2021-07-13 17:15:30,503 - INFO: Collected 1/5
+2021-07-13 17:15:30,504 - INFO: Saved 5/15
+2021-07-13 17:15:31,005 - INFO: Collected 1/5
+2021-07-13 17:15:31,006 - INFO: Saved 6/15
+2021-07-13 17:15:31,007 - INFO: Scan complete
+2021-07-13 17:15:31,009 - DEBUG: pv_callback pvName=pxm1:TomoScan:StartScan, value=0, char_value=Done
+2021-07-13 17:20:07,126 - DEBUG: pv_callback pvName=pxm1:TomoScan:StartScan, value=1, char_value=Acquire
+2021-07-13 17:20:07,127 - INFO: begin scan
+2021-07-13 17:20:07,174 - INFO: Collecting flat fields
+2021-07-13 17:20:07,201 - INFO: open shutter: <PV 'pxm1:TomoScan:OpenShutter', count=1, type=time_double, access=read/write>, value: 1
+2021-07-13 17:20:07,203 - INFO: move_sample_out axis: X
+2021-07-13 17:20:08,154 - INFO: collecting static frames: 10
+2021-07-13 17:20:08,191 - INFO: set trigger mode: Internal
+2021-07-13 17:20:08,290 - INFO: open shutter: <PV 'pxm1:TomoScan:OpenShutter', count=1, type=time_double, access=read/write>, value: 1
+2021-07-13 17:20:08,291 - INFO: move_sample_in axis: X
+2021-07-13 17:20:09,073 - INFO: set trigger mode: Internal
+2021-07-13 17:20:09,125 - INFO: stabilization time 0.000000 s
+2021-07-13 17:20:09,127 - INFO: angle 0: 0.000000
+2021-07-13 17:20:12,488 - INFO: Collected 1/5
+2021-07-13 17:20:12,488 - INFO: Saved 0/15
+2021-07-13 17:20:12,489 - INFO: angle 1: 1.000000
+2021-07-13 17:20:15,912 - INFO: Collected 1/5
+2021-07-13 17:20:15,913 - INFO: Saved 1/15
+2021-07-13 17:20:15,913 - INFO: angle 2: 2.000000
+2021-07-13 17:20:19,332 - INFO: Collected 1/5
+2021-07-13 17:20:19,332 - INFO: Saved 2/15
+2021-07-13 17:20:19,333 - INFO: angle 3: 3.000000
+2021-07-13 17:20:22,713 - INFO: Collected 1/5
+2021-07-13 17:20:22,714 - INFO: Saved 3/15
+2021-07-13 17:20:22,714 - INFO: angle 4: 4.000000
+2021-07-13 17:20:26,103 - INFO: Collected 1/5
+2021-07-13 17:20:26,104 - INFO: Saved 4/15
+2021-07-13 17:20:26,605 - INFO: Collected 1/5
+2021-07-13 17:20:26,605 - INFO: Saved 5/15
+2021-07-13 17:20:26,606 - INFO: Scan complete
+2021-07-13 17:20:26,608 - DEBUG: pv_callback pvName=pxm1:TomoScan:StartScan, value=0, char_value=Done
+2021-07-14 13:33:05,282 - DEBUG: pv_callback pvName=pxm1:TomoScan:StartScan, value=1, char_value=Acquire
+2021-07-14 13:33:05,282 - INFO: begin scan
+2021-07-14 13:33:05,374 - INFO: Collecting flat fields
+2021-07-14 13:33:05,399 - INFO: open shutter: <PV 'pxm1:TomoScan:OpenShutter', count=1, type=time_double, access=read/write>, value: 1
+2021-07-14 13:33:05,400 - INFO: move_sample_out axis: X
+2021-07-14 13:33:06,344 - INFO: Scan complete
+2021-07-14 13:33:06,345 - DEBUG: pv_callback pvName=pxm1:TomoScan:StartScan, value=0, char_value=Done
+2021-07-14 13:34:15,362 - DEBUG: pv_callback pvName=pxm1:TomoScan:StartScan, value=1, char_value=Acquire
+2021-07-14 13:34:15,363 - INFO: begin scan
+2021-07-14 13:34:15,575 - INFO: Collecting flat fields
+2021-07-14 13:34:15,602 - INFO: open shutter: <PV 'pxm1:TomoScan:OpenShutter', count=1, type=time_double, access=read/write>, value: 1
+2021-07-14 13:34:15,603 - INFO: move_sample_out axis: X
+2021-07-14 13:34:15,605 - INFO: collect flat fields
+2021-07-14 13:34:15,624 - INFO: open shutter: <PV 'pxm1:TomoScan:OpenShutter', count=1, type=time_double, access=read/write>, value: 1
+2021-07-14 13:34:15,625 - INFO: move_sample_out axis: X
+2021-07-14 13:34:15,626 - INFO: collecting static frames: 10
+2021-07-14 13:34:15,669 - INFO: set trigger mode: Internal
+2021-07-14 13:34:15,764 - INFO: open shutter: <PV 'pxm1:TomoScan:OpenShutter', count=1, type=time_double, access=read/write>, value: 1
+2021-07-14 13:34:15,765 - INFO: move_sample_in axis: X
+2021-07-14 13:34:16,747 - INFO: set trigger mode: Internal
+2021-07-14 13:34:16,802 - INFO: stabilization time 0.000000 s
+2021-07-14 13:34:16,803 - INFO: angle 0: 0.000000
+2021-07-14 13:34:20,290 - INFO: Collected 1/5
+2021-07-14 13:34:20,291 - INFO: Saved 0/15
+2021-07-14 13:34:20,291 - INFO: angle 1: 1.000000
+2021-07-14 13:34:23,697 - INFO: Collected 1/5
+2021-07-14 13:34:23,697 - INFO: Saved 1/15
+2021-07-14 13:34:23,698 - INFO: angle 2: 2.000000
+2021-07-14 13:34:27,107 - INFO: Collected 1/5
+2021-07-14 13:34:27,107 - INFO: Saved 2/15
+2021-07-14 13:34:27,108 - INFO: angle 3: 3.000000
+2021-07-14 13:34:30,505 - INFO: Collected 1/5
+2021-07-14 13:34:30,506 - INFO: Saved 3/15
+2021-07-14 13:34:30,506 - INFO: angle 4: 4.000000
+2021-07-14 13:34:33,906 - INFO: Collected 1/5
+2021-07-14 13:34:33,906 - INFO: Saved 4/15
+2021-07-14 13:34:34,407 - INFO: Collected 1/5
+2021-07-14 13:34:34,408 - INFO: Saved 5/15
+2021-07-14 13:34:34,408 - INFO: Scan complete
+2021-07-14 13:34:34,410 - DEBUG: pv_callback pvName=pxm1:TomoScan:StartScan, value=0, char_value=Done
+2021-07-14 13:38:57,180 - DEBUG: pv_callback pvName=pxm1:TomoScan:StartScan, value=1, char_value=Acquire
+2021-07-14 13:38:57,181 - INFO: begin scan
+2021-07-14 13:38:57,374 - INFO: Collecting flat fields
+2021-07-14 13:38:57,376 - INFO: collect flat fields
+2021-07-14 13:38:57,424 - INFO: open shutter: <PV 'pxm1:TomoScan:OpenShutter', count=1, type=time_double, access=read/write>, value: 1
+2021-07-14 13:38:57,425 - INFO: move_sample_out axis: X
+2021-07-14 13:38:58,371 - INFO: collect static frames: 10
+2021-07-14 13:38:58,408 - INFO: set trigger mode: Internal
+2021-07-14 13:38:58,962 - INFO: Scan complete
+2021-07-14 13:38:58,964 - DEBUG: pv_callback pvName=pxm1:TomoScan:StartScan, value=0, char_value=Done
+2021-07-14 13:42:00,360 - DEBUG: pv_callback pvName=pxm1:TomoScan:StartScan, value=1, char_value=Acquire
+2021-07-14 13:42:00,361 - INFO: begin scan
+2021-07-14 13:42:00,574 - INFO: Collecting flat fields
+2021-07-14 13:42:00,576 - INFO: collect flat fields
+2021-07-14 13:42:00,617 - INFO: open shutter: <PV 'pxm1:TomoScan:OpenShutter', count=1, type=time_double, access=read/write>, value: 1
+2021-07-14 13:42:00,619 - INFO: move_sample_out axis: X
+2021-07-14 13:42:00,621 - INFO: Scan complete
+2021-07-14 13:42:00,623 - DEBUG: pv_callback pvName=pxm1:TomoScan:StartScan, value=0, char_value=Done
+2021-07-14 13:43:41,940 - DEBUG: pv_callback pvName=pxm1:TomoScan:StartScan, value=1, char_value=Acquire
+2021-07-14 13:43:41,941 - INFO: begin scan
+2021-07-14 13:43:42,375 - INFO: Collecting flat fields
+2021-07-14 13:43:42,376 - INFO: collect flat fields
+2021-07-14 13:43:42,419 - INFO: open shutter: <PV 'pxm1:TomoScan:OpenShutter', count=1, type=time_double, access=read/write>, value: 1
+2021-07-14 13:43:42,420 - INFO: move_sample_out axis: X
+2021-07-14 13:43:42,423 - INFO: Scan complete
+2021-07-14 13:43:42,425 - DEBUG: pv_callback pvName=pxm1:TomoScan:StartScan, value=0, char_value=Done
+2021-07-14 13:44:58,149 - DEBUG: pv_callback pvName=pxm1:TomoScan:StartScan, value=1, char_value=Acquire
+2021-07-14 13:44:58,150 - INFO: begin scan
+2021-07-14 13:44:58,374 - INFO: Collecting flat fields
+2021-07-14 13:44:58,376 - INFO: collect flat fields
+2021-07-14 13:44:58,419 - INFO: open shutter: <PV 'pxm1:TomoScan:OpenShutter', count=1, type=time_double, access=read/write>, value: 1
+2021-07-14 13:44:58,420 - INFO: move_sample_out axis: X
+2021-07-14 13:44:58,423 - INFO: Scan complete
+2021-07-14 13:44:58,424 - DEBUG: pv_callback pvName=pxm1:TomoScan:StartScan, value=0, char_value=Done
+2021-07-14 14:12:51,955 - DEBUG: pv_callback pvName=pxm1:TomoScan:StartScan, value=1, char_value=Acquire
+2021-07-14 14:12:51,957 - INFO: begin scan
+2021-07-14 14:12:52,174 - INFO: Collecting flat fields
+2021-07-14 14:12:52,176 - INFO: collect flat fields
+2021-07-14 14:12:52,221 - INFO: open shutter: <PV 'pxm1:TomoScan:OpenShutter', count=1, type=time_double, access=read/write>, value: 1
+2021-07-14 14:12:52,223 - INFO: move_sample_out axis: X
+2021-07-14 14:12:52,225 - INFO: collect static frames: 10
+2021-07-14 14:12:52,264 - INFO: set trigger mode: Internal
+2021-07-14 14:12:52,821 - INFO: Scan complete
+2021-07-14 14:12:52,823 - DEBUG: pv_callback pvName=pxm1:TomoScan:StartScan, value=0, char_value=Done
+2021-07-14 14:29:07,394 - DEBUG: pv_callback pvName=pxm1:TomoScan:StartScan, value=1, char_value=Acquire
+2021-07-14 14:29:07,394 - INFO: begin scan
+2021-07-14 14:29:07,774 - INFO: Collecting flat fields
+2021-07-14 14:29:07,775 - INFO: collect flat fields
+2021-07-14 14:29:07,818 - INFO: open shutter: <PV 'pxm1:TomoScan:OpenShutter', count=1, type=time_double, access=read/write>, value: 1
+2021-07-14 14:29:07,819 - INFO: move_sample_out axis: X
+2021-07-14 14:29:07,822 - INFO: collect static frames: 10
+2021-07-14 14:29:07,885 - INFO: set trigger mode: Internal
+2021-07-14 14:29:08,441 - INFO: Scan complete
+2021-07-14 14:29:08,443 - DEBUG: pv_callback pvName=pxm1:TomoScan:StartScan, value=0, char_value=Done
+2021-07-14 14:30:38,833 - DEBUG: pv_callback pvName=pxm1:TomoScan:StartScan, value=1, char_value=Acquire
+2021-07-14 14:30:38,834 - INFO: begin scan
+2021-07-14 14:30:39,175 - INFO: Collecting flat fields
+2021-07-14 14:30:39,177 - INFO: collect flat fields
+2021-07-14 14:30:39,219 - INFO: open shutter: <PV 'pxm1:TomoScan:OpenShutter', count=1, type=time_double, access=read/write>, value: 1
+2021-07-14 14:30:39,221 - INFO: move_sample_out axis: X
+2021-07-14 14:30:39,224 - INFO: collect static frames: 10
+2021-07-14 14:30:39,259 - INFO: set trigger mode: Internal
+2021-07-14 14:30:39,813 - INFO: Scan complete
+2021-07-14 14:30:39,816 - DEBUG: pv_callback pvName=pxm1:TomoScan:StartScan, value=0, char_value=Done
+2021-07-14 14:33:51,333 - DEBUG: pv_callback pvName=pxm1:TomoScan:StartScan, value=1, char_value=Acquire
+2021-07-14 14:33:51,334 - INFO: begin scan
+2021-07-14 14:33:51,374 - INFO: Collecting flat fields
+2021-07-14 14:33:51,375 - INFO: collect flat fields
+2021-07-14 14:33:51,414 - INFO: open shutter: <PV 'pxm1:TomoScan:OpenShutter', count=1, type=time_double, access=read/write>, value: 1
+2021-07-14 14:33:51,415 - INFO: move_sample_out axis: X
+2021-07-14 14:33:51,418 - INFO: collect static frames: 10
+2021-07-14 14:33:51,450 - INFO: set trigger mode: Internal
+2021-07-14 14:33:52,008 - INFO: Scan complete
+2021-07-14 14:33:52,011 - DEBUG: pv_callback pvName=pxm1:TomoScan:StartScan, value=0, char_value=Done
+2021-07-14 14:58:01,211 - DEBUG: pv_callback pvName=pxm1:TomoScan:StartScan, value=1, char_value=Acquire
+2021-07-14 14:58:01,212 - INFO: begin scan
+2021-07-14 14:58:01,374 - INFO: Collecting flat fields
+2021-07-14 14:58:01,375 - INFO: collect flat fields
+2021-07-14 14:58:01,416 - INFO: open shutter: <PV 'pxm1:TomoScan:OpenShutter', count=1, type=time_double, access=read/write>, value: 1
+2021-07-14 14:58:01,417 - INFO: move_sample_out axis: X
+2021-07-14 14:58:01,419 - INFO: collect static frames: 10
+2021-07-14 14:58:01,453 - INFO: set trigger mode: Internal
+2021-07-14 14:58:02,006 - ERROR: Unsupported combination of camera model, pixel format and video mode: DW936A_BV None None
+2021-07-14 14:58:02,206 - INFO: Collected 0/10
+2021-07-14 14:58:02,207 - INFO: Saved 0/15
+2021-07-14 14:58:02,407 - INFO: Collected 0/10
+2021-07-14 14:58:02,408 - INFO: Saved 0/15
+2021-07-14 14:58:02,609 - INFO: Collected 0/10
+2021-07-14 14:58:02,610 - INFO: Saved 0/15
+2021-07-14 14:58:02,810 - INFO: Collected 0/10
+2021-07-14 14:58:02,811 - INFO: Saved 0/15
+2021-07-14 14:58:03,011 - INFO: Collected 0/10
+2021-07-14 14:58:03,012 - INFO: Saved 0/15
+2021-07-14 14:58:03,213 - INFO: Collected 0/10
+2021-07-14 14:58:03,213 - INFO: Saved 0/15
+2021-07-14 14:58:03,414 - INFO: Collected 0/10
+2021-07-14 14:58:03,414 - INFO: Saved 0/15
+2021-07-14 14:58:03,615 - INFO: Collected 0/10
+2021-07-14 14:58:03,616 - INFO: Saved 0/15
+2021-07-14 14:58:03,817 - INFO: Collected 0/10
+2021-07-14 14:58:03,817 - INFO: Saved 0/15
+2021-07-14 14:58:04,018 - INFO: Collected 0/10
+2021-07-14 14:58:04,018 - INFO: Saved 0/15
+2021-07-14 14:58:04,219 - INFO: Collected 0/10
+2021-07-14 14:58:04,220 - INFO: Saved 0/15
+2021-07-14 14:58:04,421 - INFO: Collected 0/10
+2021-07-14 14:58:04,421 - INFO: Saved 0/15
+2021-07-14 14:58:04,622 - INFO: Collected 0/10
+2021-07-14 14:58:04,623 - INFO: Saved 0/15
+2021-07-14 14:58:04,824 - INFO: Collected 1/10
+2021-07-14 14:58:04,825 - INFO: Saved 1/15
+2021-07-14 14:58:04,851 - INFO: open shutter: <PV 'pxm1:TomoScan:OpenShutter', count=1, type=time_double, access=read/write>, value: 1
+2021-07-14 14:58:04,852 - INFO: move_sample_in axis: X
+2021-07-14 14:58:05,835 - INFO: set trigger mode: Internal
+2021-07-14 14:58:05,889 - INFO: stabilization time 0.000000 s
+2021-07-14 14:58:05,890 - INFO: angle 0: 0.000000
+2021-07-14 14:58:09,107 - INFO: Collected 1/5
+2021-07-14 14:58:09,108 - INFO: Saved 1/15
+2021-07-14 14:58:09,108 - INFO: angle 1: 1.000000
+2021-07-14 14:58:12,497 - INFO: Collected 1/5
+2021-07-14 14:58:12,497 - INFO: Saved 2/15
+2021-07-14 14:58:12,498 - INFO: angle 2: 2.000000
+2021-07-14 14:58:15,925 - INFO: Collected 1/5
+2021-07-14 14:58:15,926 - INFO: Saved 3/15
+2021-07-14 14:58:15,926 - INFO: angle 3: 3.000000
+2021-07-14 14:58:19,301 - INFO: Collected 1/5
+2021-07-14 14:58:19,301 - INFO: Saved 4/15
+2021-07-14 14:58:19,302 - INFO: angle 4: 4.000000
+2021-07-14 14:58:22,699 - INFO: Collected 1/5
+2021-07-14 14:58:22,699 - INFO: Saved 5/15
+2021-07-14 14:58:23,199 - INFO: Collected 1/5
+2021-07-14 14:58:23,200 - INFO: Saved 6/15
+2021-07-14 14:58:23,201 - INFO: Scan complete
+2021-07-14 14:58:23,202 - DEBUG: pv_callback pvName=pxm1:TomoScan:StartScan, value=0, char_value=Done
+2021-07-14 15:02:41,413 - DEBUG: pv_callback pvName=pxm1:TomoScan:StartScan, value=1, char_value=Acquire
+2021-07-14 15:02:41,414 - INFO: begin scan
+2021-07-14 15:02:41,574 - INFO: Collecting flat fields
+2021-07-14 15:02:41,575 - INFO: collect flat fields
+2021-07-14 15:02:41,619 - INFO: open shutter: <PV 'pxm1:TomoScan:OpenShutter', count=1, type=time_double, access=read/write>, value: 1
+2021-07-14 15:02:41,620 - INFO: move_sample_out axis: X
+2021-07-14 15:02:42,571 - INFO: collect static frames: 10
+2021-07-14 15:02:42,583 - INFO: set trigger mode: Internal
+2021-07-14 15:02:43,146 - ERROR: Unsupported combination of camera model, pixel format and video mode: DW936A_BV None None
+2021-07-14 15:02:43,346 - INFO: Collected 0/10
+2021-07-14 15:02:43,347 - INFO: Saved 0/15
+2021-07-14 15:02:43,549 - INFO: Collected 0/10
+2021-07-14 15:02:43,549 - INFO: Saved 0/15
+2021-07-14 15:02:43,750 - INFO: Collected 0/10
+2021-07-14 15:02:43,751 - INFO: Saved 0/15
+2021-07-14 15:02:43,952 - INFO: Collected 0/10
+2021-07-14 15:02:43,953 - INFO: Saved 0/15
+2021-07-14 15:02:44,154 - INFO: Collected 0/10
+2021-07-14 15:02:44,155 - INFO: Saved 0/15
+2021-07-14 15:02:44,356 - INFO: Collected 0/10
+2021-07-14 15:02:44,356 - INFO: Saved 0/15
+2021-07-14 15:02:44,557 - INFO: Collected 0/10
+2021-07-14 15:02:44,558 - INFO: Saved 0/15
+2021-07-14 15:02:44,759 - INFO: Collected 0/10
+2021-07-14 15:02:44,760 - INFO: Saved 0/15
+2021-07-14 15:02:44,961 - INFO: Collected 0/10
+2021-07-14 15:02:44,961 - INFO: Saved 0/15
+2021-07-14 15:02:45,163 - INFO: Collected 0/10
+2021-07-14 15:02:45,163 - INFO: Saved 0/15
+2021-07-14 15:02:45,364 - INFO: Collected 0/10
+2021-07-14 15:02:45,365 - INFO: Saved 0/15
+2021-07-14 15:02:45,566 - INFO: Collected 0/10
+2021-07-14 15:02:45,566 - INFO: Saved 0/15
+2021-07-14 15:02:45,767 - INFO: Collected 0/10
+2021-07-14 15:02:45,768 - INFO: Saved 0/15
+2021-07-14 15:02:45,969 - INFO: Collected 0/10
+2021-07-14 15:02:45,970 - INFO: Saved 0/15
+2021-07-14 15:02:46,171 - INFO: Collected 1/10
+2021-07-14 15:02:46,171 - INFO: Saved 1/15
+2021-07-14 15:02:46,373 - INFO: Collected 1/10
+2021-07-14 15:02:46,374 - INFO: Saved 1/15
+2021-07-14 15:02:46,575 - INFO: Collected 1/10
+2021-07-14 15:02:46,575 - INFO: Saved 1/15
+2021-07-14 15:02:46,776 - INFO: Collected 1/10
+2021-07-14 15:02:46,777 - INFO: Saved 1/15
+2021-07-14 15:02:46,977 - INFO: Collected 1/10
+2021-07-14 15:02:46,978 - INFO: Saved 1/15
+2021-07-14 15:02:47,179 - INFO: Collected 1/10
+2021-07-14 15:02:47,179 - INFO: Saved 1/15
+2021-07-14 15:02:47,380 - INFO: Collected 1/10
+2021-07-14 15:02:47,381 - INFO: Saved 1/15
+2021-07-14 15:02:47,582 - INFO: Collected 1/10
+2021-07-14 15:02:47,583 - INFO: Saved 1/15
+2021-07-14 15:02:47,783 - INFO: Collected 1/10
+2021-07-14 15:02:47,784 - INFO: Saved 1/15
+2021-07-14 15:02:47,985 - INFO: Collected 1/10
+2021-07-14 15:02:47,986 - INFO: Saved 1/15
+2021-07-14 15:02:48,187 - INFO: Collected 1/10
+2021-07-14 15:02:48,188 - INFO: Saved 1/15
+2021-07-14 15:02:48,188 - ERROR: Camera timeout
+2021-07-14 15:02:48,190 - INFO: Scan complete
+2021-07-14 15:02:48,191 - DEBUG: pv_callback pvName=pxm1:TomoScan:StartScan, value=0, char_value=Done
+2021-07-14 15:17:00,926 - DEBUG: pv_callback pvName=pxm1:TomoScan:StartScan, value=1, char_value=Acquire
+2021-07-14 15:17:00,927 - INFO: begin scan
+2021-07-14 15:17:00,975 - INFO: Collecting flat fields
+2021-07-14 15:17:00,975 - INFO: collect flat fields
+2021-07-14 15:17:01,022 - INFO: open shutter: <PV 'pxm1:TomoScan:OpenShutter', count=1, type=time_double, access=read/write>, value: 1
+2021-07-14 15:17:01,022 - INFO: move_sample_out axis: X
+2021-07-14 15:17:01,023 - INFO: collect static frames: 10
+2021-07-14 15:17:01,033 - INFO: set trigger mode: Internal
+2021-07-14 15:17:01,595 - ERROR: Unsupported combination of camera model, pixel format and video mode: DW936A_BV None None
+2021-07-14 15:17:01,796 - INFO: Collected 0/10
+2021-07-14 15:17:01,797 - INFO: Saved 0/15
+2021-07-14 15:17:01,998 - INFO: Collected 0/10
+2021-07-14 15:17:01,999 - INFO: Saved 0/15
+2021-07-14 15:17:02,200 - INFO: Collected 0/10
+2021-07-14 15:17:02,200 - INFO: Saved 0/15
+2021-07-14 15:17:02,401 - INFO: Collected 0/10
+2021-07-14 15:17:02,401 - INFO: Saved 0/15
+2021-07-14 15:17:02,602 - INFO: Collected 0/10
+2021-07-14 15:17:02,602 - INFO: Saved 0/15
+2021-07-14 15:17:02,803 - INFO: Collected 0/10
+2021-07-14 15:17:02,803 - INFO: Saved 0/15
+2021-07-14 15:17:03,004 - INFO: Collected 0/10
+2021-07-14 15:17:03,004 - INFO: Saved 0/15
+2021-07-14 15:17:03,205 - INFO: Collected 0/10
+2021-07-14 15:17:03,206 - INFO: Saved 0/15
+2021-07-14 15:17:03,406 - INFO: Collected 0/10
+2021-07-14 15:17:03,407 - INFO: Saved 0/15
+2021-07-14 15:17:03,607 - INFO: Collected 0/10
+2021-07-14 15:17:03,608 - INFO: Saved 0/15
+2021-07-14 15:17:03,808 - INFO: Collected 0/10
+2021-07-14 15:17:03,809 - INFO: Saved 0/15
+2021-07-14 15:17:04,010 - INFO: Collected 0/10
+2021-07-14 15:17:04,010 - INFO: Saved 0/15
+2021-07-14 15:17:04,211 - INFO: Collected 0/10
+2021-07-14 15:17:04,212 - INFO: Saved 0/15
+2021-07-14 15:17:04,413 - INFO: Collected 1/10
+2021-07-14 15:17:04,413 - INFO: Saved 1/15
+2021-07-14 15:17:04,614 - INFO: Collected 1/10
+2021-07-14 15:17:04,615 - INFO: Saved 1/15
+2021-07-14 15:17:04,816 - INFO: Collected 1/10
+2021-07-14 15:17:04,817 - INFO: Saved 1/15
+2021-07-14 15:17:05,018 - INFO: Collected 1/10
+2021-07-14 15:17:05,018 - INFO: Saved 1/15
+2021-07-14 15:17:05,219 - INFO: Collected 1/10
+2021-07-14 15:17:05,220 - INFO: Saved 1/15
+2021-07-14 15:17:05,420 - INFO: Collected 1/10
+2021-07-14 15:17:05,421 - INFO: Saved 1/15
+2021-07-14 15:17:05,622 - INFO: Collected 1/10
+2021-07-14 15:17:05,623 - INFO: Saved 1/15
+2021-07-14 15:17:05,823 - INFO: Collected 1/10
+2021-07-14 15:17:05,824 - INFO: Saved 1/15
+2021-07-14 15:17:06,025 - INFO: Collected 1/10
+2021-07-14 15:17:06,026 - INFO: Saved 1/15
+2021-07-14 15:17:06,226 - INFO: Collected 1/10
+2021-07-14 15:17:06,227 - INFO: Saved 1/15
+2021-07-14 15:17:06,428 - INFO: Collected 1/10
+2021-07-14 15:17:06,429 - INFO: Saved 1/15
+2021-07-14 15:17:06,632 - INFO: Collected 1/10
+2021-07-14 15:17:06,633 - INFO: Saved 1/15
+2021-07-14 15:17:06,633 - ERROR: Camera timeout
+2021-07-14 15:17:06,634 - INFO: Scan complete
+2021-07-14 15:17:06,636 - DEBUG: pv_callback pvName=pxm1:TomoScan:StartScan, value=0, char_value=Done

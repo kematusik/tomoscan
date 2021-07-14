@@ -820,6 +820,7 @@ class TomoScan():
         camera_model = self.epics_pvs['CamModel'].get(as_string=True)
         readout = None
         video_mode = None
+        pixel_format = None
         if camera_model == 'Grasshopper3 GS3-U3-23S6M':
             pixel_format = self.epics_pvs['CamPixelFormat'].get(as_string=True) 
             video_mode   = self.epics_pvs['CamVideoMode'].get(as_string=True)
@@ -947,7 +948,6 @@ class TomoScan():
         """
         self.epics_pvs['CamAcquire'].put('Done') # stop acquisition
         self.wait_pv(self.epics_pvs['CamAcquire'], 0) # wait for callback
-        self.epics_pvs['CamImageMode'].put('Single', wait=True) # put camera into "Single mode" 
         log.info('set trigger mode: %s', trigger_mode) 
         self.epics_pvs['CamTriggerMode'].put(trigger_mode, wait=True) # set trigger mode
         self.wait_pv(self.epics_pvs['CamTriggerMode'], 0) 
