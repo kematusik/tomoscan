@@ -12,7 +12,7 @@ import time
 from tomoscan import TomoScan
 from tomoscan import log
 from tomoscan import TomoScanSTEP
-
+from epics import PV
 class TomoScanPrisma(TomoScanSTEP):
     """Derived class used for tomography scanning with EPICS on Prisma systems.
 
@@ -28,6 +28,11 @@ class TomoScanPrisma(TomoScanSTEP):
     def __init__(self, pv_files, macros):
         super().__init__(pv_files, macros)
         log.setup_custom_logger(lfname='./TomoScanLog', stream_to_console=True)
+        self.manufacturer = self.control_pvs['CamManufacturer'].get(as_string=True)
+        prefix = self.pv_prefixes['Camera']
+        self.camera_prefix = prefix + 'cam1:'
+        if (self.manufacturer.find('Andor') != -1):
+            self.control_pvs['CamADCSpeed'] = PV(self.camera_prefix + 'AndorADCSpeed_RBV')
 
     def begin_scan(self):
         """
@@ -57,7 +62,7 @@ class TomoScanPrisma(TomoScanSTEP):
         self.scan_is_running = False
 
         #super().end_scan()
-        
+    ''' 
     def collect_static_frames(self, num_frames):
         """Collects num_frames images in "Internal" trigger mode for dark fields and flat fields.
         Overwriting this function from TomoScanSTEP class because detectors do not have 
@@ -69,13 +74,9 @@ class TomoScanPrisma(TomoScanSTEP):
             Number of frames to collect.
         """
         # This is called when collecting dark fields or flat fields
-        #super().collect_static_frames(self.num_frames)
-        log.info('collecting static frames: %d', num_frames)
-        self.set_trigger_mode('Internal', num_frames)
         self.control_pvs['CamImageMode'].put('Multiple') # set image mode to multiple
-        self.epics_pvs['CamAcquire'].put('Acquire') 
-        self.wait_pv(self.epics_pvs['CamAcquire'], 0, 60*5) # wait for acquisition PV to finish
-    
+        super().collect_static_frames(self.num_frames)
+    '''
     def collect_dark_fields(self):
         """
         Collect dark fields.
@@ -85,8 +86,26 @@ class TomoScanPrisma(TomoScanSTEP):
         super().collect_dark_fields()
     
     def compute_frame_time(self):
-        super().compute_frame_time()
+        """
+        Computes the time to collect and readout an image from the camera.
+        """
 
+        if (self.manufacturer.find('Andor') != -1):
+            adc = self.control_pvs['CamADCSpeed'].get()
+            if adc == 0:
+                adc_speed = 5e6
+            elif adc == 1:
+                adc_speed = 3e6
+            elif adc == 2:
+                adc_speed = 1e6
+            elif adc == 3:
+                adc_speed = 0.08e6
+            readout = (2048*2048)/adc_speed #calculate readout speed based on 1x1 bin; worst-case
+            exposure = self.epics_pvs['CamAcquireTimeRBV'].value
+            frame_time = (readout + exposure) + 1 #add 1s overhead, found empirically
+            return frame_time
+        else:
+            return self.exposure_time*1.3
 
     def collect_flat_fields(self):
         """
