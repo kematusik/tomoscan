@@ -17,3 +17,7 @@ $(P)$(R)StabilizationTime
 $(P)$(R)Testing
 $(P)$(R)OpenShutter
 $(P)$(R)CloseShutter
+
+
+$(P)$(R)RotationEnd
+

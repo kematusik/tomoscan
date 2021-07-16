@@ -41,3 +41,17 @@ record(ai, "$(P)$(R)CloseShutter")
    field(VAL, "1")
 }
 
+record(calc, "$(P)$(R)NumAngles")
+{
+   field(INPA, "$(P)$(R)RotationStart CP")
+   field(INPB, "$(P)$(R)RotationEnd CP")
+   field(INPC, "$(P)$(R)RotationStep CP")
+   field(CALC, "((B-A)/C)+1")
+   field(PREC,  "3")
+}
+
+record(ao, "$(P)$(R)RotationEnd")
+{
+}
+
+

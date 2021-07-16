@@ -46,6 +46,7 @@ class TomoScanPrisma(TomoScanSTEP):
         Should not include flats and darks.
         """
         super().begin_scan()
+        self.rotation_stop = self.epics_pvs['RotationEnd'].value
 
     def end_scan(self):
         """
@@ -117,7 +118,7 @@ class TomoScanPrisma(TomoScanSTEP):
         self.frametype.put('2') # save data in exchange/data_flat_raw
         super().collect_flat_fields()
 
-    def collect_projections(self):
+    def collect_projections(self, num_frames):
         """Collects projections.
 
         This does the following:
