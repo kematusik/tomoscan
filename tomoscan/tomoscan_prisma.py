@@ -31,6 +31,7 @@ class TomoScanPrisma(TomoScanSTEP):
         self.manufacturer = self.control_pvs['CamManufacturer'].get(as_string=True)
         prefix = self.pv_prefixes['Camera']
         self.camera_prefix = prefix + 'cam1:'
+        self.frametype = PV(self.camera_prefix + 'FrameType')
         if (self.manufacturer.find('Andor') != -1):
             self.control_pvs['CamADCSpeed'] = PV(self.camera_prefix + 'AndorADCSpeed_RBV')
 
@@ -83,6 +84,7 @@ class TomoScanPrisma(TomoScanSTEP):
         """
         log.info("Collecting dark fields")
         self.control_pvs['CamImageMode'].put('Multiple') # set image mode to multiple
+        self.frametype.put('1') # save data in exchange/data_dark_raw
         super().collect_dark_fields()
     
     def compute_frame_time(self):
@@ -93,16 +95,15 @@ class TomoScanPrisma(TomoScanSTEP):
         if (self.manufacturer.find('Andor') != -1):
             adc = self.control_pvs['CamADCSpeed'].get()
             if adc == 0:
-                adc_speed = 5e6
+                readout = 1/0.953
             elif adc == 1:
-                adc_speed = 3e6
+                readout = 1/0.607
             elif adc == 2:
-                adc_speed = 1e6
+                readout = 1/0.221
             elif adc == 3:
-                adc_speed = 0.08e6
-            readout = (2048*2048)/adc_speed #calculate readout speed based on 1x1 bin; worst-case
+                readout = 1/0.011
             exposure = self.epics_pvs['CamAcquireTimeRBV'].value
-            frame_time = (readout + exposure) + 1 #add 1s overhead, found empirically
+            frame_time = readout + exposure + 1 #add 1s overhead, found empirically
             return frame_time
         else:
             return self.exposure_time*1.3
@@ -113,6 +114,7 @@ class TomoScanPrisma(TomoScanSTEP):
         """
         log.info("Collecting flat fields")
         self.control_pvs['CamImageMode'].put('Multiple') # set image mode to multiple
+        self.frametype.put('2') # save data in exchange/data_flat_raw
         super().collect_flat_fields()
 
     def collect_projections(self):
@@ -131,6 +133,7 @@ class TomoScanPrisma(TomoScanSTEP):
         TomoScan.collect_projections(self)
         self.set_trigger_mode("Internal", self.num_angles) # set the trigger mode
         self.control_pvs['CamImageMode'].put('Single') # set image mode to multiple
+        self.frametype.put('0') # save data in exchange/data
  
         start_time = time.time()
         stabilization_time = self.epics_pvs['StabilizationTime'].get() # set the stabilization time
@@ -153,6 +156,7 @@ class TomoScanPrisma(TomoScanSTEP):
         Collect post scan at same settings as tomography but with a larger step size.
         """
         #self.rotation_step_post = 
+        self.frametype.put('2') # save data in exchange/data_post_raw
         log.info("Collect post scan")
 
 ''' 
