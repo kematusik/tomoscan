@@ -8,11 +8,28 @@ A single tomography measurement consists of the following steps:
     Collect post scan
 
 """
-import time
-from tomoscan import TomoScan
-from tomoscan import log
-from tomoscan import TomoScanSTEP
+import copy
 from epics import PV
+import numpy as np
+import time
+from tomoscan import log
+from tomoscan import TomoScan
+from tomoscan import TomoScanSTEP
+
+class ScanAbortError(Exception):
+    '''Exception raised when user wants to abort a scan.
+    '''
+
+
+class CameraTimeoutError(Exception):
+    '''Exception raised when the camera times out during a scan.
+    '''
+
+class FileOverwriteError(Exception):
+    '''Exception raised when a file would be overwritten.
+    '''
+
+
 class TomoScanPrisma(TomoScanSTEP):
     """Derived class used for tomography scanning with EPICS on Prisma systems.
 
@@ -27,11 +44,14 @@ class TomoScanPrisma(TomoScanSTEP):
 
     def __init__(self, pv_files, macros):
         super().__init__(pv_files, macros)
+        #create log
         log.setup_custom_logger(lfname='./TomoScanLog', stream_to_console=True)
+        #get camera manufacturer
         self.manufacturer = self.control_pvs['CamManufacturer'].get(as_string=True)
         prefix = self.pv_prefixes['Camera']
         self.camera_prefix = prefix + 'cam1:'
         self.frametype = PV(self.camera_prefix + 'FrameType')
+        #if camera is Andor, grab ADC speed
         if (self.manufacturer.find('Andor') != -1):
             self.control_pvs['CamADCSpeed'] = PV(self.camera_prefix + 'AndorADCSpeed_RBV')
 
@@ -41,44 +61,112 @@ class TomoScanPrisma(TomoScanSTEP):
         - check tube is on
         - set xml files
         - set the area detcetor plugin chains
-        - setup the scan record
+        - set scan parameters and total number of images
 
-        Should not include flats and darks.
         """
-        super().begin_scan()
+        TomoScan.begin_scan(self)
         self.rotation_stop = self.epics_pvs['RotationEnd'].value
-
+        self.num_angles = int(((self.rotation_stop-self.rotation_start)/self.rotation_step)+1)
+        self.post_scan_mode = self.epics_pvs['AcquirePostScan'].get(as_string=True)
+        self.post_scan_step = self.epics_pvs['PostScanStep'].value
+        self.num_post_scan = int(((self.rotation_stop-self.rotation_start)/self.post_scan_step)+1)
+        self.theta = self.rotation_start + np.arange(self.num_angles) * self.rotation_step
+        
+        self.total_images = self.num_angles
+        if self.dark_field_mode != 'None':
+            self.total_images += self.num_dark_fields
+        if self.dark_field_mode == 'Both':
+            self.total_images += self.num_dark_fields
+        if self.flat_field_mode != 'None':
+            self.total_images += self.num_flat_fields
+        if self.flat_field_mode == 'Both':
+            self.total_images += self.num_flat_fields
+        if self.post_scan_mode == "Yes":
+            self.total_images +=self.num_post_scan
+        print(self.total_images)
+        self.epics_pvs['FPNumCapture'].put(self.total_images, wait=True)
+        self.epics_pvs['FPCapture'].put('Capture')
+           
     def end_scan(self):
         """
         Actions to be performed at the end of the scan.
 
         Should not include flats and darks.
         """
-        #self.collect_post_scan()
+        super().end_scan()
+    
+    def fly_scan(self):
+        """Overwrites main method so that we can include a post scan.
 
-        if self.return_rotation == 'Yes':
-            self.epics_pvs['Rotation'].put(self.rotation_start)
-        log.info('Scan complete')
-        self.epics_pvs['ScanStatus'].put('Scan complete')
-        self.epics_pvs['StartScan'].put(0)
-        self.scan_is_running = False
+        Performs the operations for a tomography fly scan, i.e. with continuous rotation.
 
-        #super().end_scan()
-    ''' 
-    def collect_static_frames(self, num_frames):
-        """Collects num_frames images in "Internal" trigger mode for dark fields and flat fields.
-        Overwriting this function from TomoScanSTEP class because detectors do not have 
-        requisite information to calculate frame time.
+        This base class method does the following:
 
-        Parameters
-        ----------
-        num_frames : int
-            Number of frames to collect.
+        - Moves the rotation motor to position defined by the ``RotationStart`` PV.
+
+        - Calls ``begin_scan()``
+
+        - If the ``DarkFieldMode`` PV is 'Start' or 'Both' calls ``collect_dark_fields()``
+
+        - If the ``FlatFieldMode`` PV is 'Start' or 'Both' calls ``collect_flat_fields()``
+
+        - Calls ``collect_projections()``
+        
+        - Calls ``collect_post_scan()``
+
+        - If the ``FlatFieldMode`` PV is 'End' or 'Both' calls ``collect_flat_fields()``
+
+        - If the ``DarkFieldMode`` PV is 'End' or 'Both' calls ``collect_dark_fields()``
+
+        - Calls ``end_scan``
+
+        If there is either CameraTimeoutError exception or ScanAbortError exception during the scan,
+        it jumps immediate to calling ``end_scan()`` and returns.
+
+        It is not expected that most derived classes will need to override this method, but they are
+        free to do so if required.
         """
-        # This is called when collecting dark fields or flat fields
-        self.control_pvs['CamImageMode'].put('Multiple') # set image mode to multiple
-        super().collect_static_frames(self.num_frames)
-    '''
+
+        try:
+            # Prepare for scan
+            self.begin_scan()
+            # Move the rotation to the start
+            self.epics_pvs['Rotation'].put(self.rotation_start, wait=True)
+            # Collect the pre-scan dark fields if required
+            if (self.num_dark_fields > 0) and (self.dark_field_mode in ('Start', 'Both')):
+                self.collect_dark_fields()
+            # Collect the pre-scan flat fields if required
+            if (self.num_flat_fields > 0) and (self.flat_field_mode in ('Start', 'Both')):
+                self.collect_flat_fields()
+            # Collect the projections
+            self.frametype.put('0') # save data in exchange/data
+            self.collect_projections()
+            # Collect post scan projections
+            if (self.num_post_scan > 0) and (self.post_scan_mode=='Yes'):
+                log.info('Collecting post scan')
+                self.frametype.put('3') # save data in exchange/data_post_raw
+                self.num_angles = copy.deepcopy(self.num_post_scan)
+                self.rotation_step = copy.deepcopy(self.post_scan_step) 
+                self.theta = self.rotation_start + np.arange(self.num_angles) * self.rotation_step 
+                self.collect_projections()
+            # Collect the post-scan flat fields if required
+            if (self.num_flat_fields > 0) and (self.flat_field_mode in ('End', 'Both')):
+                self.collect_flat_fields()
+            # Collect the post-scan dark fields if required
+            if (self.num_dark_fields > 0) and (self.dark_field_mode in ('End', 'Both')):
+                self.collect_dark_fields()
+
+        except ScanAbortError:
+            log.error('Scan aborted')
+            super().ScanAbortError()
+        except CameraTimeoutError:
+            log.error('Camera timeout')
+        except FileOverwriteError:
+            log.error('File overwrite aborted')
+        #Make sure we do cleanup tasks from the end of the scan
+        finally:
+            self.end_scan()
+
     def collect_dark_fields(self):
         """
         Collect dark fields.
@@ -90,7 +178,7 @@ class TomoScanPrisma(TomoScanSTEP):
     
     def compute_frame_time(self):
         """
-        Computes the time to collect and readout an image from the camera.
+        Computes the time to collect and read out an image from the camera.
         """
 
         if (self.manufacturer.find('Andor') != -1):
@@ -106,6 +194,8 @@ class TomoScanPrisma(TomoScanSTEP):
             exposure = self.epics_pvs['CamAcquireTimeRBV'].value
             frame_time = readout + exposure + 1 #add 1s overhead, found empirically
             return frame_time
+        elif (self.manufacturer.find('Teledyne DALSA') != -1):
+            return (self.exposure_time+0.066)*1.1
         else:
             return self.exposure_time*1.3
 
@@ -118,7 +208,7 @@ class TomoScanPrisma(TomoScanSTEP):
         self.frametype.put('2') # save data in exchange/data_flat_raw
         super().collect_flat_fields()
 
-    def collect_projections(self, num_frames):
+    def collect_projections(self):
         """Collects projections.
 
         This does the following:
@@ -134,8 +224,6 @@ class TomoScanPrisma(TomoScanSTEP):
         TomoScan.collect_projections(self)
         self.set_trigger_mode("Internal", self.num_angles) # set the trigger mode
         self.control_pvs['CamImageMode'].put('Single') # set image mode to multiple
-        self.frametype.put('0') # save data in exchange/data
- 
         start_time = time.time()
         stabilization_time = self.epics_pvs['StabilizationTime'].get() # set the stabilization time
         log.info("stabilization time %f s", stabilization_time)
@@ -152,15 +240,6 @@ class TomoScanPrisma(TomoScanSTEP):
         time.sleep(0.5)
         self.update_status(start_time)    
     
-    def collect_post_scan(self):
-        """
-        Collect post scan at same settings as tomography but with a larger step size.
-        """
-        #self.rotation_step_post = 
-        self.frametype.put('2') # save data in exchange/data_post_raw
-        log.info("Collect post scan")
-
-''' 
     def set_trigger_mode(self, trigger_mode, num_images):
         """Sets the trigger mode on the camera.
 
@@ -175,10 +254,12 @@ class TomoScanPrisma(TomoScanSTEP):
             This is used to set the ``NumImages`` PV of the camera.
         """
         self.epics_pvs['CamAcquire'].put('Done') # stop acquisition
-        self.wait_pv(self.epics_pvs['CamAcquire'], 0) 
-        self.epics_pvs['CamImageMode'].put('Single', wait=True) #put camera into "Single mode" 
+        self.wait_pv(self.epics_pvs['CamAcquire'], 0) # wait for callback
         log.info('set trigger mode: %s', trigger_mode) 
-        self.epics_pvs['CamTriggerMode'].put('Internal', wait=True) # set trigger mode
+        if trigger_mode=='FreeRun':
+            self.epics_pvs['CamTriggerMode'].put('Internal', wait=True) # set trigger mode
+        else:    
+            self.epics_pvs['CamTriggerMode'].put(trigger_mode, wait=True) # set trigger mode
         self.wait_pv(self.epics_pvs['CamTriggerMode'], 0) 
         self.epics_pvs['CamNumImages'].put(num_images, wait=True) # set number of images to take
-'''
+

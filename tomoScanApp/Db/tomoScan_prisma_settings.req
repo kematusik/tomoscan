@@ -19,5 +19,11 @@ $(P)$(R)OpenShutter
 $(P)$(R)CloseShutter
 
 
+#########################
+# Scan information
+#########################
 $(P)$(R)RotationEnd
+$(P)$(R)NumOfAngles
+$(P)$(R)AcquirePostScan
+$(P)$(R)PostScanStep
 

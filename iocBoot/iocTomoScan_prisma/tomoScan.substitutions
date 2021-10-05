@@ -2,7 +2,7 @@ file "$(TOP)/db/tomoScan.template"
 {
 pattern
 {  P,      R,      CAMERA,    FILE_PLUGIN,   ROTATION,  SAMPLE_X,  SAMPLE_Y,      CLOSE_SHUTTER,        CLOSE_VALUE,        OPEN_SHUTTER,         OPEN_VALUE}
-{pxm1:, TomoScan:, ANDOR1:,   ANDOR1:HDF1:,  pxm1:m1,   DMC01:D,   DMC01:E,        mk4:KvOn,                0,                  mk4:KvOn,      1}
+{pxm1:, TomoScan:, 13SIM1:,   13SIM1:HDF1:,  spxm1:m3,   spxm1:m1,  spxm1:m2,        mk4:KvOn,                0,                  mk4:KvOn,      1}
 }
 
 file "$(TOP)/tomoScanApp/Db/tomoScan_prisma.template"

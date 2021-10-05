@@ -41,17 +41,28 @@ record(ai, "$(P)$(R)CloseShutter")
    field(VAL, "1")
 }
 
-record(calc, "$(P)$(R)NumAngles")
+record(calc, "$(P)$(R)NumOfAngles")
 {
    field(INPA, "$(P)$(R)RotationStart CP")
    field(INPB, "$(P)$(R)RotationEnd CP")
    field(INPC, "$(P)$(R)RotationStep CP")
    field(CALC, "((B-A)/C)+1")
-   field(PREC,  "3")
+   field(PREC,  "0")
 }
 
 record(ao, "$(P)$(R)RotationEnd")
 {
 }
 
+record(mbbo, "$(P)$(R)AcquirePostScan")
+{
+   field(ZRVL, "0")
+   field(ZRST, "No")
+   field(ONVL, "1")
+   field(ONST, "Yes")
+}
+
+record(ao, "$(P)$(R)PostScanStep")
+{
+}
 
