@@ -6733,3 +6733,174 @@
 2021-09-15 21:36:21,775 - INFO: move_sample_in axis: Both
 2021-09-15 21:36:22,439 - INFO: Scan complete
 2021-09-15 21:36:22,441 - DEBUG: pv_callback pvName=pxm1:TomoScan:StartScan, value=0, char_value=Done
+2021-10-05 11:08:53,212 - DEBUG: pv_callback pvName=pxm1:TomoScan:StartScan, value=1, char_value=Acquire
+2021-10-05 11:08:53,223 - INFO: end scan
+2021-10-05 11:08:53,224 - INFO: data save location: 
+2021-10-05 11:08:53,248 - INFO: set trigger mode: FreeRun
+2021-10-05 11:08:53,263 - INFO: move_sample_in axis: Both
+2021-10-05 11:08:53,680 - INFO: Scan complete
+2021-10-05 11:08:53,681 - DEBUG: pv_callback pvName=pxm1:TomoScan:MoveSampleIn, value=0, char_value=Done
+2021-10-05 11:08:53,683 - DEBUG: pv_callback pvName=pxm1:TomoScan:StartScan, value=0, char_value=Done
+2021-10-05 11:11:39,961 - DEBUG: pv_callback pvName=pxm1:TomoScan:StartScan, value=1, char_value=Acquire
+2021-10-05 11:11:39,971 - INFO: open shutter: <PV 'mk4:KvOn': not connected>, value: 1
+2021-10-05 11:11:41,971 - INFO: move_sample_in axis: Both
+2021-10-05 11:11:41,984 - INFO: set trigger mode: Internal
+2021-10-05 11:11:41,999 - INFO: stabilization time 0.000000 s
+2021-10-05 11:11:42,001 - INFO: angle 0: 0.000000
+2021-10-05 11:11:43,017 - INFO: Collected 1/7
+2021-10-05 11:11:43,017 - INFO: Saved 0/21
+2021-10-05 11:11:43,022 - INFO: angle 1: 5.000000
+2021-10-05 11:12:14,033 - INFO: Collected 1/7
+2021-10-05 11:12:14,037 - INFO: Saved 2/21
+2021-10-05 11:12:14,038 - INFO: angle 2: 10.000000
+2021-10-05 11:12:21,576 - INFO: Collected 1/7
+2021-10-05 11:12:21,576 - INFO: Saved 2/21
+2021-10-05 11:12:21,578 - INFO: angle 3: 15.000000
+2021-10-05 11:12:52,589 - INFO: Collected 1/7
+2021-10-05 11:12:52,590 - INFO: Saved 4/21
+2021-10-05 11:12:52,594 - INFO: angle 4: 20.000000
+2021-10-05 11:13:23,608 - INFO: Collected 1/7
+2021-10-05 11:13:23,610 - INFO: Saved 4/21
+2021-10-05 11:13:23,611 - INFO: angle 5: 25.000000
+2021-10-05 11:13:27,570 - INFO: Collected 1/7
+2021-10-05 11:13:27,571 - INFO: Saved 5/21
+2021-10-05 11:13:27,573 - INFO: angle 6: 30.000000
+2021-10-05 11:13:30,578 - INFO: Collected 1/7
+2021-10-05 11:13:30,579 - INFO: Saved 6/21
+2021-10-05 11:13:31,080 - INFO: Collected 1/7
+2021-10-05 11:13:31,081 - INFO: Saved 7/21
+2021-10-05 11:13:31,082 - INFO: Collecting post scan
+2021-10-05 11:13:31,083 - INFO: open shutter: <PV 'mk4:KvOn': not connected>, value: 1
+2021-10-05 11:13:33,084 - INFO: move_sample_in axis: Both
+2021-10-05 11:13:37,097 - INFO: set trigger mode: Internal
+2021-10-05 11:13:37,111 - INFO: stabilization time 0.000000 s
+2021-10-05 11:13:37,111 - INFO: angle 0: 0.000000
+2021-10-05 11:13:40,121 - INFO: Collected 1/4
+2021-10-05 11:13:40,124 - INFO: Saved 8/21
+2021-10-05 11:13:40,126 - INFO: angle 1: 10.000000
+2021-10-05 11:13:43,133 - INFO: Collected 1/4
+2021-10-05 11:13:43,134 - INFO: Saved 8/21
+2021-10-05 11:13:43,136 - INFO: angle 2: 20.000000
+2021-10-05 11:13:46,144 - INFO: Collected 1/4
+2021-10-05 11:13:46,144 - INFO: Saved 10/21
+2021-10-05 11:13:46,149 - INFO: angle 3: 30.000000
+2021-10-05 11:13:49,163 - INFO: Collected 1/4
+2021-10-05 11:13:49,164 - INFO: Saved 11/21
+2021-10-05 11:13:49,665 - INFO: Collected 1/4
+2021-10-05 11:13:49,666 - INFO: Saved 11/21
+2021-10-05 11:13:49,667 - INFO: Collecting flat fields
+2021-10-05 11:13:49,668 - INFO: collect flat fields
+2021-10-05 11:13:49,669 - INFO: open shutter: <PV 'mk4:KvOn': not connected>, value: 1
+2021-10-05 11:13:51,670 - INFO: move_sample_out axis: Both
+2021-10-05 11:13:55,671 - INFO: collect static frames: 5
+2021-10-05 11:13:55,672 - DEBUG: pv_callback pvName=pxm1:TomoScan:MoveSampleOut, value=0, char_value=Done
+2021-10-05 11:13:55,686 - INFO: set trigger mode: Internal
+2021-10-05 11:13:56,402 - INFO: Collected 0/5
+2021-10-05 11:13:56,403 - INFO: Saved 11/21
+2021-10-05 11:13:56,605 - INFO: Collected 0/5
+2021-10-05 11:13:56,606 - INFO: Saved 11/21
+2021-10-05 11:13:56,807 - INFO: Collected 1/5
+2021-10-05 11:13:56,807 - INFO: Saved 12/21
+2021-10-05 11:13:57,009 - INFO: Collected 1/5
+2021-10-05 11:13:57,011 - INFO: Saved 12/21
+2021-10-05 11:13:57,212 - INFO: Collected 1/5
+2021-10-05 11:13:57,213 - INFO: Saved 12/21
+2021-10-05 11:13:57,414 - INFO: Collected 1/5
+2021-10-05 11:13:57,415 - INFO: Saved 12/21
+2021-10-05 11:13:57,616 - INFO: Collected 1/5
+2021-10-05 11:13:57,616 - INFO: Saved 12/21
+2021-10-05 11:13:57,818 - INFO: Collected 2/5
+2021-10-05 11:13:57,818 - INFO: Saved 13/21
+2021-10-05 11:13:58,020 - INFO: Collected 2/5
+2021-10-05 11:13:58,021 - INFO: Saved 13/21
+2021-10-05 11:13:58,222 - INFO: Collected 2/5
+2021-10-05 11:13:58,223 - INFO: Saved 13/21
+2021-10-05 11:13:58,424 - INFO: Collected 2/5
+2021-10-05 11:13:58,424 - INFO: Saved 13/21
+2021-10-05 11:13:58,625 - INFO: Collected 2/5
+2021-10-05 11:13:58,626 - INFO: Saved 13/21
+2021-10-05 11:13:58,827 - INFO: Collected 3/5
+2021-10-05 11:13:58,828 - INFO: Saved 14/21
+2021-10-05 11:13:59,029 - INFO: Collected 3/5
+2021-10-05 11:13:59,031 - INFO: Saved 14/21
+2021-10-05 11:13:59,232 - INFO: Collected 3/5
+2021-10-05 11:13:59,233 - INFO: Saved 14/21
+2021-10-05 11:13:59,434 - INFO: Collected 3/5
+2021-10-05 11:13:59,435 - INFO: Saved 14/21
+2021-10-05 11:13:59,636 - INFO: Collected 3/5
+2021-10-05 11:13:59,636 - INFO: Saved 14/21
+2021-10-05 11:13:59,838 - INFO: Collected 4/5
+2021-10-05 11:13:59,839 - INFO: Saved 15/21
+2021-10-05 11:14:00,040 - INFO: Collected 4/5
+2021-10-05 11:14:00,040 - INFO: Saved 15/21
+2021-10-05 11:14:00,241 - INFO: Collected 4/5
+2021-10-05 11:14:00,242 - INFO: Saved 15/21
+2021-10-05 11:14:00,444 - INFO: Collected 4/5
+2021-10-05 11:14:00,444 - INFO: Saved 15/21
+2021-10-05 11:14:00,645 - INFO: Collected 4/5
+2021-10-05 11:14:00,646 - INFO: Saved 15/21
+2021-10-05 11:14:00,847 - INFO: Collected 5/5
+2021-10-05 11:14:00,847 - INFO: Saved 16/21
+2021-10-05 11:14:00,850 - INFO: Collecting dark fields
+2021-10-05 11:14:00,850 - INFO: collect dark fields
+2021-10-05 11:14:00,852 - INFO: close shutter: <PV 'mk4:KvOn': not connected>, value: 0
+2021-10-05 11:14:02,854 - INFO: collect static frames: 5
+2021-10-05 11:14:02,865 - INFO: set trigger mode: Internal
+2021-10-05 11:14:03,578 - INFO: Collected 0/5
+2021-10-05 11:14:03,579 - INFO: Saved 16/21
+2021-10-05 11:14:03,780 - INFO: Collected 0/5
+2021-10-05 11:14:03,781 - INFO: Saved 16/21
+2021-10-05 11:14:03,982 - INFO: Collected 1/5
+2021-10-05 11:14:03,983 - INFO: Saved 17/21
+2021-10-05 11:14:04,184 - INFO: Collected 1/5
+2021-10-05 11:14:04,185 - INFO: Saved 17/21
+2021-10-05 11:14:04,386 - INFO: Collected 1/5
+2021-10-05 11:14:04,388 - INFO: Saved 17/21
+2021-10-05 11:14:04,589 - INFO: Collected 1/5
+2021-10-05 11:14:04,590 - INFO: Saved 17/21
+2021-10-05 11:14:04,791 - INFO: Collected 1/5
+2021-10-05 11:14:04,792 - INFO: Saved 17/21
+2021-10-05 11:14:04,994 - INFO: Collected 2/5
+2021-10-05 11:14:04,994 - INFO: Saved 18/21
+2021-10-05 11:14:05,196 - INFO: Collected 2/5
+2021-10-05 11:14:05,196 - INFO: Saved 18/21
+2021-10-05 11:14:05,397 - INFO: Collected 2/5
+2021-10-05 11:14:05,398 - INFO: Saved 18/21
+2021-10-05 11:14:05,599 - INFO: Collected 2/5
+2021-10-05 11:14:05,601 - INFO: Saved 18/21
+2021-10-05 11:14:05,803 - INFO: Collected 2/5
+2021-10-05 11:14:05,804 - INFO: Saved 18/21
+2021-10-05 11:14:06,005 - INFO: Collected 3/5
+2021-10-05 11:14:06,006 - INFO: Saved 19/21
+2021-10-05 11:14:06,207 - INFO: Collected 3/5
+2021-10-05 11:14:06,208 - INFO: Saved 19/21
+2021-10-05 11:14:06,409 - INFO: Collected 3/5
+2021-10-05 11:14:06,410 - INFO: Saved 19/21
+2021-10-05 11:14:06,611 - INFO: Collected 3/5
+2021-10-05 11:14:06,612 - INFO: Saved 19/21
+2021-10-05 11:14:06,814 - INFO: Collected 3/5
+2021-10-05 11:14:06,814 - INFO: Saved 19/21
+2021-10-05 11:14:07,016 - INFO: Collected 4/5
+2021-10-05 11:14:07,016 - INFO: Saved 20/21
+2021-10-05 11:14:07,218 - INFO: Collected 4/5
+2021-10-05 11:14:07,218 - INFO: Saved 20/21
+2021-10-05 11:14:07,420 - INFO: Collected 4/5
+2021-10-05 11:14:07,421 - INFO: Saved 20/21
+2021-10-05 11:14:07,624 - INFO: Collected 4/5
+2021-10-05 11:14:07,624 - INFO: Saved 20/21
+2021-10-05 11:14:07,825 - INFO: Collected 4/5
+2021-10-05 11:14:07,826 - INFO: Saved 20/21
+2021-10-05 11:14:08,027 - INFO: Collected 5/5
+2021-10-05 11:14:08,027 - INFO: Saved 21/21
+2021-10-05 11:14:08,029 - INFO: end scan
+2021-10-05 11:14:08,029 - INFO: data save location: /home/sigray/Documents/Tomoscan/testing3_000.h5
+2021-10-05 11:14:08,043 - INFO: set trigger mode: FreeRun
+2021-10-05 11:14:10,058 - INFO: move_sample_in axis: Both
+2021-10-05 11:14:16,060 - INFO: Scan complete
+2021-10-05 11:14:16,061 - DEBUG: pv_callback pvName=pxm1:TomoScan:StartScan, value=0, char_value=Done
+2021-10-06 15:52:10,438 - DEBUG: pv_callback pvName=pxm1:TomoScan:ExposureTime, value=0.0, char_value=0
+2021-10-06 15:52:10,439 - DEBUG: pv_callback pvName=pxm1:TomoScan:FilePath, value=[], char_value=
+2021-10-06 15:52:10,440 - DEBUG: pv_callback pvName=pxm1:TomoScan:MoveSampleIn, value=0, char_value=Done
+2021-10-06 15:52:10,440 - DEBUG: pv_callback pvName=pxm1:TomoScan:MoveSampleOut, value=0, char_value=Done
+2021-10-06 15:52:10,440 - DEBUG: pv_callback pvName=pxm1:TomoScan:StartScan, value=0, char_value=Done
+2021-10-06 15:52:10,441 - DEBUG: pv_callback pvName=pxm1:TomoScan:AbortScan, value=0, char_value=No
