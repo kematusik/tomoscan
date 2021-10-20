@@ -149,6 +149,8 @@ class TomoScanPrisma(TomoScanSTEP):
                 self.rotation_step = copy.deepcopy(self.post_scan_step) 
                 self.theta = self.rotation_start + np.arange(self.num_angles) * self.rotation_step 
                 self.collect_projections()
+            # Move the rotation to 0 for flat and dark fields
+            self.epics_pvs['Rotation'].put(0, wait=True)
             # Collect the post-scan flat fields if required
             if (self.num_flat_fields > 0) and (self.flat_field_mode in ('End', 'Both')):
                 self.collect_flat_fields()

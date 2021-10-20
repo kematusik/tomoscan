@@ -1,6 +1,6 @@
 #!/bin/bash
 
 # Use this line to run the locally built tomoScanApp
-export EPICS_CA_SERVER_PORT=8116
+export EPICS_CA_SERVER_PORT=8112
 ../../bin/linux-x86_64/tomoScanApp st.cmd
 
