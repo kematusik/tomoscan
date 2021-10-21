@@ -134,10 +134,6 @@ class TomoScanSTEP(TomoScan):
         # Put the camera back in FreeRun mode and acquiring
         self.set_trigger_mode('FreeRun', 1)
 
-        # Set the rotation speed to maximum
-        self.epics_pvs['RotationSpeed'].put(self.max_rotation_speed)
-        # self.cleanup_PSO()
-
         # Move the sample in.  Could be out if scan was aborted while taking flat fields
         self.move_sample_in()
 

@@ -94,7 +94,8 @@ class TomoScanPrisma(TomoScanSTEP):
         Should not include flats and darks.
         """
         super().end_scan()
-    
+        
+
     def fly_scan(self):
         """Overwrites main method so that we can include a post scan.
 
@@ -130,14 +131,16 @@ class TomoScanPrisma(TomoScanSTEP):
         try:
             # Prepare for scan
             self.begin_scan()
-            # Move the rotation to the start
-            self.epics_pvs['Rotation'].put(self.rotation_start, wait=True)
             # Collect the pre-scan dark fields if required
             if (self.num_dark_fields > 0) and (self.dark_field_mode in ('Start', 'Both')):
                 self.collect_dark_fields()
             # Collect the pre-scan flat fields if required
             if (self.num_flat_fields > 0) and (self.flat_field_mode in ('Start', 'Both')):
+                # Move the rotation stage to 0
+                self.epics_pvs['Rotation'].put(0, wait=True)
                 self.collect_flat_fields()
+            # Move the rotation to the start
+            self.epics_pvs['Rotation'].put(self.rotation_start, wait=True)
             # Collect the projections
             self.frametype.put('0') # save data in exchange/data
             self.collect_projections()
@@ -149,10 +152,10 @@ class TomoScanPrisma(TomoScanSTEP):
                 self.rotation_step = copy.deepcopy(self.post_scan_step) 
                 self.theta = self.rotation_start + np.arange(self.num_angles) * self.rotation_step 
                 self.collect_projections()
-            # Move the rotation to 0 for flat and dark fields
-            self.epics_pvs['Rotation'].put(0, wait=True)
             # Collect the post-scan flat fields if required
             if (self.num_flat_fields > 0) and (self.flat_field_mode in ('End', 'Both')):
+                # Move the rotation to 0 for flat and dark fields
+                self.epics_pvs['Rotation'].put(0, wait=True)
                 self.collect_flat_fields()
             # Collect the post-scan dark fields if required
             if (self.num_dark_fields > 0) and (self.dark_field_mode in ('End', 'Both')):
@@ -197,7 +200,7 @@ class TomoScanPrisma(TomoScanSTEP):
             frame_time = readout + exposure + 1 #add 1s overhead, found empirically
             return frame_time
         elif (self.manufacturer.find('Teledyne DALSA') != -1):
-            return (self.exposure_time+0.066)*1.1
+            return self.exposure_time+0.4
         else:
             return self.exposure_time*1.3
 
