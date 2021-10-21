@@ -228,7 +228,7 @@ class TomoScanPrisma(TomoScanSTEP):
         """
         TomoScan.collect_projections(self)
         self.set_trigger_mode("Internal", self.num_angles) # set the trigger mode
-        self.control_pvs['CamImageMode'].put('Single') # set image mode to multiple
+        self.control_pvs['CamImageMode'].put('Single') # set image mode to single
         start_time = time.time()
         stabilization_time = self.epics_pvs['StabilizationTime'].get() # set the stabilization time
         log.info("stabilization time %f s", stabilization_time)
@@ -237,8 +237,8 @@ class TomoScanPrisma(TomoScanSTEP):
                 log.info('angle %d: %f', k, self.theta[k])
                 self.epics_pvs['Rotation'].put(self.theta[k], wait=True) #rotate 
                 time.sleep(stabilization_time)
-                self.epics_pvs['CamAcquire'].put('Acquire') # acquire image
-                self.wait_pv(self.epics_pvs['CamAcquire'], 0, 60) # wait for acquisition PV to finish
+                self.epics_pvs['CamAcquire'].put('Acquire',wait=True) # acquire image
+                #self.wait_pv(self.epics_pvs['CamAcquire'], 0, 60) # wait for acquisition PV to finish
                 self.update_status(start_time)
 
         # wait until the last frame is saved (not needed)
