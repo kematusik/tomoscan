@@ -93,6 +93,7 @@ class TomoScanPrisma(TomoScanSTEP):
 
         Should not include flats and darks.
         """
+        # Call the base class method
         super().end_scan()
         
 

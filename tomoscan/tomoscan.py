@@ -444,7 +444,7 @@ class TomoScan():
         config = {}
         for key in self.config_pvs:
             config[key] = self.config_pvs[key].get(as_string=True)
-        out_file = open(file_name, 'a+')
+        out_file = open(file_name, 'w+')
         json.dump(config, out_file, indent=2)
         out_file.close()
 
